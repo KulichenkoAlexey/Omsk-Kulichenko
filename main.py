@@ -3,13 +3,14 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 from PyQt5.QtGui import QPainter, QColor
 from random import randint
 import sys
+from ui_file import Ui_MainWindow
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('Circle_drawer.ui', self)
-        self.create_circl.clicked.connect(self.paint)
+        self.setupUi(self)
+        self.create_circle.clicked.connect(self.paint)
         self.do_paint = False
 
     def paintEvent(self, event):
