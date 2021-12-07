@@ -25,7 +25,8 @@ class MyWidget(QMainWindow, Ui_MainWindow):
         self.repaint()
 
     def draw_flag(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        rndc = QColor(randint(0, 255), randint(0, 255), randint(0, 255))
+        qp.setBrush(rndc)
         rnd = randint(5, 500)
         qp.drawEllipse(0, 0, rnd, rnd)
 
